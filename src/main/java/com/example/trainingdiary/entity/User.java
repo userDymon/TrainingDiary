@@ -1,35 +1,29 @@
 package com.example.trainingdiary.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Email;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "users")
-
+@Table(name = "users") // Зміна імені таблиці
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Username is mandatory")
     private String username;
-
-    @NotBlank(message = "Email is mandatory")
-    @Column(unique = true)
-    @Email(message = "Email should be valid")
-    private String email;
-
-    @NotBlank(message = "Password is mandatory")
     private String password;
+    private String email;
+    private LocalDate createdAt;
 
-    public User(String username, String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
+    // Геттери та сеттери
+
+    public Long getId() {
+        return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -37,6 +31,14 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -47,11 +49,11 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public LocalDate getCreatedAt() {
+        return createdAt;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
     }
 }
