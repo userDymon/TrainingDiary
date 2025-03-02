@@ -52,6 +52,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll() // Дозволити доступ до ендпоінтів автентифікації
                         .requestMatchers("/api/exercises/**").permitAll() // Дозволити доступ до ендпоінтів вправ
+                        .requestMatchers("/api/trainings/**").permitAll() // Дозволити доступ до ендпоінтів тренувань
                         .anyRequest().authenticated() // Інші ендпоінти вимагають автентифікації
                 )
                 .sessionManagement(session -> session
