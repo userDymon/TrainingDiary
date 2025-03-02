@@ -23,7 +23,6 @@ public class Training {
     @JoinColumn(name = "exercise_id", nullable = false)
     private Exercise exercise;
 
-    private int duration; // in minutes
     private LocalDate date;
 
 }

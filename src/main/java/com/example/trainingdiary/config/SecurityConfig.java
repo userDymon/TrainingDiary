@@ -51,6 +51,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable) // Вимкнення CSRF захисту
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll() // Дозволити доступ до ендпоінтів автентифікації
+                        .requestMatchers("/api/exercises/**").permitAll() // Дозволити доступ до ендпоінтів вправ
                         .anyRequest().authenticated() // Інші ендпоінти вимагають автентифікації
                 )
                 .sessionManagement(session -> session
