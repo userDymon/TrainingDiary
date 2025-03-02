@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
     public User registerUser(SignupRequest signUpRequest) {
         User user = new User();
         user.setUsername(signUpRequest.getUsername());
-        user.setPassword(passwordEncoder.encode(signUpRequest.getPassword()));
+        user.setPassword(passwordEncoder.encode(signUpRequest.getPassword())); // Хешування пароля
         user.setEmail(signUpRequest.getEmail());
         user.setCreatedAt(LocalDate.now());
         return userRepository.save(user);

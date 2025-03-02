@@ -14,6 +14,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map; // Додано імпорт для Map
+
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -42,11 +44,30 @@ public class AuthController {
     public ResponseEntity<?> registerUser(@RequestBody SignupRequest signUpRequest) {
         // Перевірка, чи існує користувач з таким іменем
         if (userService.existsByUsername(signUpRequest.getUsername())) {
-            return ResponseEntity.badRequest().body("Error: Username is already taken!");
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("message", "Error: Username is already taken!")); // Використання Map
         }
 
         // Реєстрація нового користувача
         User user = userService.registerUser(signUpRequest);
-        return ResponseEntity.ok("User registered successfully!");
+
+        // Автоматична аутентифікація нового користувача
+        try {
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(signUpRequest.getUsername(), signUpRequest.getPassword()));
+
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
+            // Генерація JWT токена
+            String jwt = jwtUtil.generateToken((org.springframework.security.core.userdetails.User) authentication.getPrincipal());
+
+            // Повернення JWT токена у відповідь
+            return ResponseEntity.ok(new JwtResponse(jwt));
+        } catch (Exception e) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("message", "Error during authentication: " + e.getMessage())); // Використання Map
+        }
     }
 }
