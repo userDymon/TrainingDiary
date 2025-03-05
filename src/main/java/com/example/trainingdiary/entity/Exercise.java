@@ -13,7 +13,6 @@ public class Exercise {
     private String description;
     private String muscleGroup;
 
-    // Гетери та сетери
     public Long getId() {
         return id;
     }

@@ -23,7 +23,6 @@ public class Training {
 
     private LocalDate date;
 
-    // Гетери та сетери (якщо не використовуєте Lombok)
     public Long getId() {
         return id;
     }

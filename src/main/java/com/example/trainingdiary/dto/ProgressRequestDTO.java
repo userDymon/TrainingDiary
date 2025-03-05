@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Data
 public class ProgressRequestDTO {
     private Long exerciseId;
-    private double value; // Например, вес или количество повторений
+    private double value;
     private LocalDate date;
 
     // Геттеры и сеттеры

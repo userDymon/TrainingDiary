@@ -11,8 +11,6 @@ public class ProgressResponseDTO {
     private double value;
     private LocalDate date;
 
-    // Геттеры и сеттеры
-
     public Long getId() {
         return id;
     }

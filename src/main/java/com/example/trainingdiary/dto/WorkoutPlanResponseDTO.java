@@ -12,8 +12,6 @@ public class WorkoutPlanResponseDTO {
     private Long userId;
     private List<Long> exerciseIds; // Список ID упражнений
 
-    // Геттеры и сеттеры
-
     public Long getId() {
         return id;
     }

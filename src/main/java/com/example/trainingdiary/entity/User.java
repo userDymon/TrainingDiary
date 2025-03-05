@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "users") // Зміна імені таблиці
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,8 +14,6 @@ public class User {
     private String password;
     private String email;
     private LocalDate createdAt;
-
-    // Геттери та сеттери
 
     public Long getId() {
         return id;

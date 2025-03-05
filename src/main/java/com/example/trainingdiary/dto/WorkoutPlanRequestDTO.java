@@ -10,8 +10,6 @@ public class WorkoutPlanRequestDTO {
     private String description;
     private List<Long> exerciseIds; // Список ID упражнений
 
-    // Геттеры и сеттеры
-
     public String getName() {
         return name;
     }

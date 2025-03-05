@@ -8,7 +8,6 @@ public class TrainingResponseDTO {
     private Long exerciseId;
     private LocalDate date;
 
-    // Гетери та сетери
     public Long getId() {
         return id;
     }

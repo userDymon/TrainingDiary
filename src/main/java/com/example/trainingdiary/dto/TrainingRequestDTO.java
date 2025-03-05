@@ -6,7 +6,6 @@ public class TrainingRequestDTO {
     private Long exerciseId;
     private LocalDate date;
 
-
     public Long getExerciseId() {
         return exerciseId;
     }
@@ -14,8 +13,6 @@ public class TrainingRequestDTO {
     public LocalDate getDate() {
         return date;
     }
-
-    // Сетери
 
     public void setExerciseId(Long exerciseId) {
         this.exerciseId = exerciseId;

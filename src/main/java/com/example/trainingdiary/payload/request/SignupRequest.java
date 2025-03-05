@@ -5,7 +5,6 @@ public class SignupRequest {
     private String password;
     private String email;
 
-    // Геттери та сеттери
     public String getUsername() {
         return username;
     }

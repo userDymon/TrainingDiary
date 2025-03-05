@@ -24,8 +24,6 @@ public class WorkoutPlan {
     )
     private List<Exercise> exercises;
 
-    // Геттеры и сеттеры
-
     public Long getId() {
         return id;
     }

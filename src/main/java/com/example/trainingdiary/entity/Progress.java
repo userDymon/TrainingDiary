@@ -20,8 +20,6 @@ public class Progress {
     private double value; // Например, вес или количество повторений
     private LocalDate date;
 
-    // Геттеры и сеттеры
-
     public Long getId() {
         return id;
     }
