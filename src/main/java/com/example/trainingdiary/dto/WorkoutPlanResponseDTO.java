@@ -10,7 +10,7 @@ public class WorkoutPlanResponseDTO {
     private String name;
     private String description;
     private Long userId;
-    private List<Long> exerciseIds; // Список ID упражнений
+    private List<Long> exerciseIds;
 
     public Long getId() {
         return id;
