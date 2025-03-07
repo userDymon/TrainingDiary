@@ -17,7 +17,7 @@ public class Progress {
     @JoinColumn(name = "exercise_id", nullable = false)
     private Exercise exercise;
 
-    private double value; // Например, вес или количество повторений
+    private double value;
     private LocalDate date;
 
     public Long getId() {
