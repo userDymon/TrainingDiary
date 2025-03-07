@@ -8,7 +8,7 @@ import java.util.List;
 public class WorkoutPlanRequestDTO {
     private String name;
     private String description;
-    private List<Long> exerciseIds; // Список ID упражнений
+    private List<Long> exerciseIds;
 
     public String getName() {
         return name;
