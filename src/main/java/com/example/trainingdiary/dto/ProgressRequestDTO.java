@@ -10,8 +10,6 @@ public class ProgressRequestDTO {
     private double value;
     private LocalDate date;
 
-    // Геттеры и сеттеры
-
     public Long getExerciseId() {
         return exerciseId;
     }
